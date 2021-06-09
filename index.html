@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style>
+        #test {
+            background-color: purple;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            max-height: 100vh;
+            max-width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 vw-100 vh-100  d-flex  m-auto align-items-center " id="gop">
+                <div id="test" class=" d-flex align-items-center justify-content-center m-auto   text-center text-light"
+                    onmouseover="rudra()">Hover me</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3 m-auto" id="sh1">
+                <button class="btn bg-success text-center" onclick="rev()">Go Back:- </button>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <script>
+        let a = 0;
+        let target = document.getElementById('test');
+        let sh1 = document.getElementById('sh1');
+        let gop = document.getElementById('gop');
+
+        function rudra() {
+
+
+            if (a == 2000) {
+                target.style.borderRadius = '0%'
+                // console.log(300);
+                document.body.style.backgroundColor = 'purple';
+                // sh1.innerHTML = `<button class="btn bg-success text-center" onclick="rev()">Go Back:- </button>
+                //     </div>`;
+            }
+
+            else {
+                a = a + 5;
+                target.style.width = a + "px";
+                target.style.height = a + "px";
+                console.log(target.style.width)
+                setInterval(rudra, 100);
+            }
+
+
+
+        }
+        function rev() {
+            location.reload();
+        }
+
+    </script>
+</body>
+
+
+</html>
